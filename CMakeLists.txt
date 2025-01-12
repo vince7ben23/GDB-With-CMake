@@ -4,5 +4,16 @@ project(gdb_with_cmake)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_executable(main.out src/main.cpp src/utils/foo.cpp)
+add_subdirectory(src/utils)
+add_executable(main.out src/main.cpp)
+
+target_link_libraries(main.out PUBLIC utils)
+
+# use this way because spdlog is header-only
+target_include_directories(
+    main.out PRIVATE 
+    "${PROJECT_SOURCE_DIR}/src"
+)
+
+
 

@@ -1,6 +1,5 @@
 # GDB with CMake
 - A toy project to integrate GDB with CMake.
-- Require to install spdlog before run the example.
 
 ## How to Build
 ```bash
@@ -11,7 +10,8 @@
 ./build.sh -g
 ```
 
-## Install spdlog
+## Third-party Libs
+### Install spdlog
 
 ```bash
 mkdir -p src/spdlog
